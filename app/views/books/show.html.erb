@@ -2,9 +2,9 @@
 
 <%= render @book %>
 
-<div>
-  <%= link_to "Edit this book", edit_book_path(@book) %> |
-  <%= link_to "Back to books", books_path %>
+<div style="margin-top: 20px; display: flex; align-items: center;">
+  <%= link_to "Editar esse Livro", edit_book_path(@book), style: "margin-right: 10px; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; text-decoration: none; color: #fff; background-color: #007bff; transition: background-color 0.3s ease;" %> |
+  <%= link_to "Voltar para Livros", books_path, style: "padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; text-decoration: none; color: #fff; background-color: #6c757d; transition: background-color 0.3s ease;" %>
 
-  <%= button_to "Destroy this book", @book, method: :delete %>
+  <%= button_to "Apagar este Livro", @book, method: :delete, style: "margin-left: 10px; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; text-decoration: none; color: #fff; background-color: #dc3545; transition: background-color 0.3s ease;" %>
 </div>

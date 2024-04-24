@@ -1,9 +1,11 @@
-<h1>New book</h1>
 
-<%= render "form", book: @book %>
+<div style="max-width: 600px; margin: 0 auto; padding: 50px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <h1 style="font-size: 24px; margin-bottom: 20px; color: #333;">New Book</h1>
 
-<br>
-
-<div>
-  <%= link_to "Back to books", books_path %>
+  <div style="background-color: #fff; border: 1px solid #ccc; padding: 50px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <%= render "form", book: @book %>
+  </div>
+</div>
+<div style="margin-top: 20px; text-align: center;">
+    <%= link_to "Back to Books", books_path, class: "btn btn-secondary", style: "text-decoration: none; color: #fff; background-color: #007bff; border-color: #007bff; padding: 10px 20px; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;" %>
 </div>

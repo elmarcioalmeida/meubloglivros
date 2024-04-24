@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Books</h1>
-
+<h1>Relação de Livros</h1>
+ 
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
     <p>
-      <%= link_to "Show this book", book %>
+      <%= link_to "Mostre-me este livro", book %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New book", new_book_path %>
+
+<div style="margin-top: 10px; text-align: center;">
+    <%= link_to "Cadastrar Livro", new_book_path, class: "btn btn-secondary", style: "text-decoration: none; color: #fff; background-color: #007bff; border-color: #007bff; padding: 10px 20px; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;" %>
+  </div>
