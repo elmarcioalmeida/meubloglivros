@@ -1,17 +1,40 @@
-<p style="color: green"><%= notice %></p>
+<body>
 
-<h1>Relação de Livros</h1>
- 
-<div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Mostre-me este livro", book %>
-    </p>
-  <% end %>
+<p class="notice"><%= notice %></p>
+<div class="container">
+  <h1>Relação de Livros</h1>
+  
+  <div class="books-columns">
+    <div class="column">
+      <% @books.each_with_index do |book, index| %>
+        <% if index.even? %>
+          <%= render book %>
+          <p>
+            <%= link_to "Mostre-me este livro", book_path(book) %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="column">
+      <% @books.each_with_index do |book, index| %>
+        <% if index.odd? %>
+          <%= render book %>
+          <p>
+            <%= link_to "Mostre-me este livro", book_path(book) %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
+<div class="button-container">
+  <%= link_to "Cadastrar Livro", new_book_path, class: "btn btn-secondary" %>
+</div>
 
-<div style="margin-top: 10px; text-align: center;">
-    <%= link_to "Cadastrar Livro", new_book_path, class: "btn btn-secondary", style: "text-decoration: none; color: #fff; background-color: #007bff; border-color: #007bff; padding: 10px 20px; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;" %>
-  </div>
+<footer>
+  <p>Página Index.html.erb</p>
+</footer>
+ 
+</body>
+</html>
